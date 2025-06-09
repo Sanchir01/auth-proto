@@ -1,0 +1,15 @@
+[package]
+name = "auth-proto"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tonic = { version = "0.13", features = ["transport"] }
+prost = "0.13"
+prost-types = "0.13"
+dotenvy = "0.15.7"
+
+
+[build-dependencies]
+tonic-build = "0.13.1"
+dotenvy = "0.15.7"
