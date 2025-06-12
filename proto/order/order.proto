@@ -10,7 +10,7 @@ service Order{
   rpc TelegramOrder(OrderRequest) returns (OrderResponse);
 }
 
-message OrderMessage {
+message OrderItem {
   string id = 1; 
   string title = 2;
   string slug = 3;
@@ -24,8 +24,12 @@ message OrderMessage {
   string description = 11;
   int32 weight = 12;
 }
+message OrderData{
+  OrderItem orders = 1;
+  int32 quantity  = 2;
+}
 message OrderRequest{
-    repeated OrderMessage orders = 1;
+  repeated OrderData orders = 1;
 }
 message OrderResponse{
     string ok = 1;
